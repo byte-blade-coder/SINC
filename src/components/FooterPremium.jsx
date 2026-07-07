@@ -113,7 +113,7 @@ const Footer = () => {
 
       {/* BOTTOM BAR */}
       <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-4 text-zinc-500 text-xs">
-        <p>© 2024 SINC. All rights reserved.</p>
+        <p>© 2026 SINC RESEARCH. All rights reserved.</p>
         <div className="flex gap-6 uppercase tracking-widest">
           <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
           <a href="#" className="hover:text-white transition-colors">Terms & Conditions</a>
