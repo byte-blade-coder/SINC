@@ -15,10 +15,11 @@ const Clients = () => {
     <section className="clients-section-outer">
       <div className="clients-badge-container">
         <div className="clients-badge">
-          Join Over
-          <span className="highlight-pill">1000+</span>
-          Companies with SINC Here
-        </div>
+Supporting Maritime Domain Awareness and{" "}
+<span className="highlight-pill">
+  Mission-Critical Operations
+</span>{" "}
+Worldwide        </div>
       </div>
       <div className="clients-marquee">
         <div className="marquee-content">

@@ -6,15 +6,15 @@ const Hero = () => {
     <section className="hero-section">
       <div className="hero-container">
         <div className="hero-content">
-          <span className="hero-subtitle">[ TRANSFORMING IDEAS ]</span>
-          <h1 className="hero-title">
-            Engineering Maritime
-            Domain Awareness Through
-            Innovative R&D.
-          </h1>
+          <span className="hero-subtitle">Maritime Domain Awareness & Mission-Critical Engineering</span>
+          <h1 className="text-[65px] font-medium hero-title">
+  Engineering Maritime
+  Domain Awareness Through
+  Innovative R&D.
+</h1>
           <div className="hero-actions-wrap">
             <a href="#" className="btn-primary hero-btn">
-              Explore Services
+              Explore Capabilities
               <span className="btn-icon">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="7" y1="17" x2="17" y2="7" />
@@ -22,13 +22,14 @@ const Hero = () => {
                 </svg>
               </span>
             </a>
-            <a href="tel:+18883338181" className="hero-phone">
+            <a href="tel:+923223525116" className="hero-phone">
               <span className="phone-icon">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#23abe6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                 </svg>
               </span>
-              +1 (888) 333-8181
+                            +92 322 3525116
+
             </a>
           </div>
           <div className="hero-features">

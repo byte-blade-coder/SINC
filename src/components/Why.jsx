@@ -54,8 +54,7 @@ const Why = () => {
           <div className="why-top-left">
             <span className="why-label">[ WHY CHOOSE US ]</span>
             <h2 className="why-heading">
-              Reliable IT Solution, for<br />
-              Best Results.
+              Built on Research. Proven in Maritime Domain Awareness.
             </h2>
           </div>
           <div className="why-top-right">
