@@ -8,9 +8,9 @@ const Hero = () => {
         <div className="hero-content">
           <span className="hero-subtitle">[ TRANSFORMING IDEAS ]</span>
           <h1 className="hero-title">
-            Innovative Tech<br />
-            Solutions for<br />
-            Business.
+            Engineering Maritime
+            Domain Awareness Through
+            Innovative R&D.
           </h1>
           <div className="hero-actions-wrap">
             <a href="#" className="btn-primary hero-btn">
