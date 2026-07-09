@@ -1,5 +1,8 @@
 
 import React from 'react';
+import { motion } from 'framer-motion';
+import AnimationWrapper from './AnimationWrapper';
+import AnimatedIcon from './AnimatedIcon';
 
 const Services = () => {
   const services = [
@@ -7,119 +10,128 @@ const Services = () => {
       number: '01',
       icon: (
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#23abe6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-          <line x1="8" y1="21" x2="16" y2="21" />
-          <line x1="12" y1="17" x2="12" y2="21" />
-          <polyline points="9 8 7 10 9 12" />
-          <polyline points="15 8 17 10 15 12" />
+          <path d="M4 18V8l8-4 8 4v10" />
+          <path d="M4 12h16" />
+          <path d="M8 16h8" />
         </svg>
       ),
-      title: 'Managed IT Services',
-      desc: 'Comprehensive IT management, including monitoring, maintenance.',
-      list: ['24/7 system monitoring', 'IT support & troubleshooting', 'Remote IT assistance'],
+      title: 'Sensing — Radar, RF Sensing & Coastal Surveillance',
+      desc: 'We develop and integrate naval sensor systems — radar, RF sensing, and coastal surveillance radar — that capture the critical operational data feeding Maritime Domain Awareness.',
+      list: ['Radar & RF sensing, signal acquisition and monitoring', 'Environmental sensors for maritime conditions', 'Control & interface sensors for embedded systems'],
     },
     {
       number: '02',
       icon: (
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#23abe6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />
-          <line x1="12" y1="12" x2="12" y2="16" />
-          <line x1="9" y1="14" x2="15" y2="14" />
+          <rect x="3" y="4" width="18" height="16" rx="2" />
+          <path d="M8 8h8" />
+          <path d="M8 12h5" />
+          <path d="M8 16h3" />
         </svg>
       ),
-      title: 'Cloud Computing',
-      desc: 'Scalable cloud-based services, including migration, storage, and security.',
-      list: ['Scalable cloud storage', 'SaaS, PaaS, and IaaS integration', 'Hybrid & multi-cloud'],
+      title: 'Processing — High-Performance Processing Platforms',
+      desc: 'We design computing platforms that turn radar, RF, and sensor data into intelligent system behavior — the processing backbone of any C4ISR architecture.',
+      list: ['FPGA, GPU, SBC, and DSP-based hardware platforms', 'Radar and RF signal processing algorithms', 'Communication and embedded control algorithms'],
     },
     {
       number: '03',
       icon: (
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#23abe6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-          <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-          <circle cx="12" cy="16" r="1.5" />
+          <path d="M5 7h14" />
+          <path d="M7 7V5h10v2" />
+          <rect x="4" y="7" width="16" height="11" rx="2" />
+          <path d="M8 18v2" />
+          <path d="M16 18v2" />
         </svg>
       ),
-      title: 'Cybersecurity Solutions',
-      desc: 'Advanced security measures, including firewall protection, threat detection.',
-      list: ['Firewall & network security', 'Threat detection & prevention', 'Endpoint protection'],
+      title: 'Communication — Secure Communication & SATCOM Systems',
+      desc: 'We build communication technologies that enable reliable data transmission across maritime platforms, sensors, and command centers spanning SDR, SATCOM, and long-range networks.',
+      list: ['Software Defined Radio and SATCOM', 'LPWAN / LoRaWAN for distributed sensing', 'Wireless networking and secure operational data links'],
     },
     {
       number: '04',
       icon: (
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#23abe6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="12" cy="12" r="3" />
-          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h-.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v-.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0-1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+          <path d="M4 19h16" />
+          <path d="M7 19V9" />
+          <path d="M12 19V5" />
+          <path d="M17 19v-7" />
         </svg>
       ),
-      title: 'IT Consulting & Strategy',
-      desc: 'Expert guidance to optimize IT infrastructure, streamline operations, and drive.',
-      list: ['Transformation planning', 'IT Infrastructure optimization', 'Risk assessment'],
-    },
-    {
-      number: '05',
-      icon: (
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#23abe6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-        </svg>
-      ),
-      title: 'Network Infrastructure',
-      desc: 'Designing, implementing, and maintaining secure and high-performance.',
-      list: ['Network design & setup', 'Wired & wireless solutions', 'Network monitoring'],
+      title: 'Data Analytics — AIS Vessel Tracking & Maritime Intelligence',
+      desc: 'We transform AIS vessel tracking, radar, and sensor data into actionable maritime intelligence for real-time monitoring, dark vessel detection, and informed decision-making.',
+      list: ['Maritime traffic intelligence', 'Dark vessel detection / dark shipping analysis', 'Search & rescue and environmental intelligence'],
     },
   ];
 
   return (
-    <div className="services-section-outer">
-      <section className="services-section">
-        <div className="services-container">
-          <div className="services-grid">
-            <div className="services-title-card">
-              <span className="services-label">[ EXPLORE SERVICES ]</span>
-              <h2 className="services-heading">
-                Reliable IT Solution<br />
-                for a Smarter.
-              </h2>
-              <a href="#" className="services-btn">
-                Learn More
-                <span className="services-btn-icon">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7" />
-                    <polyline points="7 7 17 7 17 17" />
-                  </svg>
-                </span>
-              </a>
+    <AnimationWrapper>
+      <div className="services-section-outer">
+        <section className="services-section">
+          <div className="services-container">
+            <div className="services-grid">
+              <motion.div 
+                className="services-title-card"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <span className="services-label">EXPLORE CAPABILITIES</span>
+                <h2 className="services-heading">
+                  Four Pillars of Maritime Domain Awareness.
+                </h2>
+                <p className="services-desc">
+                  SINC Lab builds integrated capability across sensing, processing, communication, and analytics for modern maritime and defense operations.
+                </p>
+              </motion.div>
+              {services.map((service, index) => (
+                <motion.div 
+                  key={index} 
+                  className="service-card"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  whileHover={{ scale: 1.05, y: -10 }}
+                >
+                  <div className="service-number-box">{service.number}</div>
+                  <div className="service-icon-wrap">
+                    <AnimatedIcon className="flex items-center justify-center" hoverScale={1.2} rotate={8} duration={2.2} delay={index * 0.08}>
+                      {service.icon}
+                    </AnimatedIcon>
+                  </div>
+                  <h3 className="service-title">{service.title}</h3>
+                  <p className="service-desc">{service.desc}</p>
+                  <ul className="service-list">
+                    {service.list.map((item, i) => (
+                      <li key={i}>
+                        <span className="check-icon">
+                          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#23abe6" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                        </span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <motion.a 
+                    href="#" 
+                    className="service-link"
+                    whileHover={{ x: 5 }}
+                  >
+                    <span>Learn more</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="9 18 15 12 9 6" />
+                    </svg>
+                  </motion.a>
+                </motion.div>
+              ))}
             </div>
-            {services.map((service, index) => (
-              <div key={index} className="service-card">
-                <div className="service-number-box">{service.number}</div>
-                <div className="service-icon-wrap">{service.icon}</div>
-                <h3 className="service-title">{service.title}</h3>
-                <p className="service-desc">{service.desc}</p>
-                <ul className="service-list">
-                  {service.list.map((item, i) => (
-                    <li key={i}>
-                      <span className="check-icon">
-                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#23abe6" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
-                          <polyline points="20 6 9 17 4 12" />
-                        </svg>
-                      </span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <a href="#" className="service-link">
-                  <span>Learn more</span>
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="9 18 15 12 9 6" />
-                  </svg>
-                </a>
-              </div>
-            ))}
           </div>
-        </div>
-      </section>
-    </div>
+        </section>
+      </div>
+    </AnimationWrapper>
   );
 };
 

@@ -1,81 +1,90 @@
 
 import React from 'react';
+import { motion } from 'framer-motion';
+import AnimationWrapper from './AnimationWrapper';
+import AnimatedIcon from './AnimatedIcon';
 
 const Team = () => {
+  const placeholderImage = 'data:image/svg+xml;utf8,' + encodeURIComponent(`
+    <svg xmlns="http://www.w3.org/2000/svg" width="600" height="720" viewBox="0 0 600 720">
+      <rect width="600" height="720" rx="28" fill="#111827"/>
+      <rect x="70" y="70" width="460" height="580" rx="24" fill="#1f2937" stroke="#374151" stroke-width="2"/>
+      <circle cx="300" cy="280" r="110" fill="#4b5563"/>
+      <path d="M180 570c20-92 100-142 120-142s100 50 120 142" fill="#4b5563"/>
+      <rect x="180" y="150" width="240" height="40" rx="20" fill="#23abe6" opacity="0.7"/>
+    </svg>
+  `);
+
   const teamMembers = [
     {
-      name: 'Eade Marren',
-      role: 'Chief Executive',
-      img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+      name: '[Name]',
+      role: 'Founder / Chief Executive',
+      img: placeholderImage
     },
     {
-      name: 'Savannah Ngueen',
-      role: 'Operations Head',
-      img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+      name: '[Name]',
+      role: 'Radar & RF Sensing Lead',
+      img: placeholderImage
     },
     {
-      name: 'Cameron William',
-      role: 'Marketing Lead',
-      img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+      name: '[Name]',
+      role: 'Processing & Embedded Systems Lead',
+      img: placeholderImage
     },
     {
-      name: 'Olivia Fox',
-      role: 'Business Director',
-      img: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+      name: '[Name]',
+      role: 'Communication Systems Lead (SATCOM / SDR)',
+      img: placeholderImage
+    },
+    {
+      name: '[Name]',
+      role: 'Maritime Data Analytics Lead',
+      img: placeholderImage
     }
   ];
 
   return (
-    <section className="team-section">
-      <div className="team-container">
-        <div className="team-header">
-          <div className="team-header-left">
-            <span className="team-subtitle">[ MEET OUR TEAM ]</span>
-            <h2 className="team-title">
-              Creative Minds Behind<br />
-              our Team.
-            </h2>
-          </div>
-          <div className="team-header-right">
-            <p className="team-desc">
-              Our teams are customized to meet<br />
-              your unique Ideas.
-            </p>
-            <a href="#" className="team-btn-more">
-              More Member
-              <span className="btn-icon">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="7" y1="17" x2="17" y2="7" />
-                  <polyline points="7 7 17 7 17 17" />
-                </svg>
-              </span>
-            </a>
-          </div>
-        </div>
-        <div className="team-grid">
-          {teamMembers.map((member, index) => (
-            <div key={index} className="team-card">
-              <div className="team-img-wrapper">
-                <img src={member.img} alt={member.name} />
-                <div className="team-share-btn">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#111" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="18" cy="5" r="3" />
-                    <circle cx="6" cy="12" r="3" />
-                    <circle cx="18" cy="19" r="3" />
-                    <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
-                    <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
-                  </svg>
-                </div>
-              </div>
-              <div className="team-info">
-                <h3 className="team-name">{member.name}</h3>
-                <span className="team-role">{member.role}</span>
-              </div>
+    <AnimationWrapper>
+      <section className="team-section">
+        <div className="team-container">
+          <motion.div 
+            className="team-header"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="team-header-left">
+              <span className="team-subtitle">OUR ENGINEERING TEAM</span>
+              <h2 className="team-title">
+                The People Behind the Systems.
+              </h2>
             </div>
-          ))}
+          </motion.div>
+          <div className="team-grid">
+            {teamMembers.map((member, index) => (
+              <motion.div 
+                key={index} 
+                className="team-card"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ scale: 1.05, y: -10 }}
+              >
+                <div className="team-img-wrapper">
+                  <img src={member.img} alt={member.name} />
+                </div>
+                <div className="team-info">
+                  <h3 className="team-name">{member.name}</h3>
+                  <span className="team-role">{member.role}</span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </AnimationWrapper>
   );
 };
 

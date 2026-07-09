@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { 
   Mail, 
   Phone, 
@@ -45,10 +46,17 @@ const Footer = () => {
             
             {/* Small Social Icons */}
             <div className="flex gap-5 text-white/80">
-              <Twitter className="text-lg cursor-pointer hover:text-black transition-colors" />
-              <Linkedin className="text-lg cursor-pointer hover:text-black transition-colors" />
-              <Instagram className="text-lg cursor-pointer hover:text-black transition-colors" />
-              <Github className="text-lg cursor-pointer hover:text-black transition-colors" />
+              {[Twitter, Linkedin, Instagram, Github].map((Icon, index) => (
+                <motion.div
+                  key={index}
+                  whileHover={{ scale: 1.2, rotate: 8, y: -4 }}
+                  whileTap={{ scale: 0.9 }}
+                  transition={{ duration: 0.25 }}
+                  className="cursor-pointer"
+                >
+                  <Icon className="text-lg hover:text-black transition-colors" />
+                </motion.div>
+              ))}
             </div>
           </div>
         </div>
@@ -96,15 +104,21 @@ const Footer = () => {
           <h4 className="text-white font-semibold uppercase tracking-wider text-xs">Contact Us</h4>
           <ul className="space-y-4 text-zinc-400 text-sm">
             <li className="flex items-start gap-3">
-              <MapPin className={`text-lg ${accentText}`} />
+              <motion.span whileHover={{ scale: 1.15, rotate: 8 }} className="mt-0.5">
+                <MapPin className={`text-lg ${accentText}`} />
+              </motion.span>
               <span>123 Innovation Drive, Silicon Valley, CA 94025</span>
             </li>
             <li className="flex items-center gap-3">
-              <Phone className={`text-lg ${accentText}`} />
+              <motion.span whileHover={{ scale: 1.15, rotate: 8 }}>
+                <Phone className={`text-lg ${accentText}`} />
+              </motion.span>
               <span>+1 (555) 000-1234</span>
             </li>
             <li className="flex items-center gap-3">
-              <Mail className={`text-lg ${accentText}`} />
+              <motion.span whileHover={{ scale: 1.15, rotate: 8 }}>
+                <Mail className={`text-lg ${accentText}`} />
+              </motion.span>
               <span>hello@sinc.com</span>
             </li>
           </ul>

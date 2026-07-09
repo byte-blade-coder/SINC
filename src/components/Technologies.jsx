@@ -1,5 +1,8 @@
 
 import React from 'react';
+import { motion } from 'framer-motion';
+import AnimationWrapper from './AnimationWrapper';
+import AnimatedIcon from './AnimatedIcon';
 
 const Technologies = () => {
   const techsLeft = [
@@ -17,45 +20,63 @@ const Technologies = () => {
   ];
 
   return (
-    <section className="tech-section">
-      <div className="tech-container">
-        <div className="tech-header">
-          <span className="tech-subtitle">[ OUR TECHNOLOGIES ]</span>
-          <h2 className="tech-title">
-            Effortless IT Integration<br />
-            for Business.
-          </h2>
-        </div>
-        <div className="tech-grid-wrapper">
-          <div className="tech-marquee tech-marquee-left">
-            <div className="tech-marquee-track track-left">
-              {[...techsLeft, ...techsLeft].map((tech, index) => (
-                <div key={index} className="tech-card">
-                  <div className="tech-card-header">
-                    <img src={tech.img} alt={tech.name} className="tech-icon" />
-                    <h3 className="tech-name">{tech.name}</h3>
-                  </div>
-                  <p className="tech-desc">{tech.desc}</p>
-                </div>
-              ))}
+    <AnimationWrapper>
+      <section className="tech-section">
+        <div className="tech-container">
+          <motion.div 
+            className="tech-header"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <span className="tech-subtitle">[ OUR TECHNOLOGIES ]</span>
+            <h2 className="tech-title">
+              Effortless IT Integration<br />
+              for Business.
+            </h2>
+          </motion.div>
+          <div className="tech-grid-wrapper">
+            <div className="tech-marquee tech-marquee-left">
+              <div className="tech-marquee-track track-left">
+                {[...techsLeft, ...techsLeft].map((tech, index) => (
+                  <motion.div 
+                    key={index} 
+                    className="tech-card"
+                    whileHover={{ scale: 1.05, y: -10 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <div className="tech-card-header">
+                      <img src={tech.img} alt={tech.name} className="tech-icon" />
+                      <h3 className="tech-name">{tech.name}</h3>
+                    </div>
+                    <p className="tech-desc">{tech.desc}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+            <div className="tech-marquee tech-marquee-right">
+              <div className="tech-marquee-track track-right">
+                {[...techsRight, ...techsRight].map((tech, index) => (
+                  <motion.div 
+                    key={index} 
+                    className="tech-card"
+                    whileHover={{ scale: 1.05, y: -10 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <div className="tech-card-header">
+                      <img src={tech.img} alt={tech.name} className="tech-icon" />
+                      <h3 className="tech-name">{tech.name}</h3>
+                    </div>
+                    <p className="tech-desc">{tech.desc}</p>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </div>
-          <div className="tech-marquee tech-marquee-right">
-            <div className="tech-marquee-track track-right">
-              {[...techsRight, ...techsRight].map((tech, index) => (
-                <div key={index} className="tech-card">
-                  <div className="tech-card-header">
-                    <img src={tech.img} alt={tech.name} className="tech-icon" />
-                    <h3 className="tech-name">{tech.name}</h3>
-                  </div>
-                  <p className="tech-desc">{tech.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </AnimationWrapper>
   );
 };
 
