@@ -3266,3 +3266,20 @@ img {
 	}
 }
 
+/* Custom Section Headings Weight */
+h2.why-heading,
+h2.tech-title,
+h2.team-title,
+h2.services-heading,
+h2.projects-title,
+h2.about-heading {
+	font-weight: 500 !important;
+}
+
+/* Specific Why Heading Width */
+h2.why-heading {
+	width: 650px;
+	max-width: 100%;
+}
+
+

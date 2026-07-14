@@ -41,6 +41,7 @@ const HeroSectionOne = () => {
             loop
             muted
             playsInline
+            preload="auto"
             className="absolute inset-0 w-full h-full object-cover opacity-60"
             src="/assets/HERO SECTION VIDEO_processed.mp4"
           />
@@ -65,7 +66,7 @@ const HeroSectionOne = () => {
           initial={{ y: -80, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ ...customTransition, delay: 0.1 }}
-          className={`absolute top-6 z-40 w-[90%] max-w-[1728px] h-[90px] rounded-[20px] border border-white/[0.06] flex items-center justify-between px-6 md:px-10 transition-all duration-500 ${
+          className={`absolute top-6 z-40 w-[90%] max-w-[1728px] h-[90px] rounded-[20px] border border-white/[0.06] flex items-center justify-between px-6 md:px-10 transition-[background-color,box-shadow,backdrop-filter] duration-500 ${
             scrolled
               ? 'bg-black/75 backdrop-blur-lg shadow-[0_10px_30px_rgba(0,0,0,0.5),_inset_0_1px_0_rgba(255,255,255,0.08)]'
               : 'bg-black/35 backdrop-blur-md'
