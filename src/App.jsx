@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 import Lenis from 'lenis';
 import './style.css';
+import HeroSectionOne from './components/HeroSectionOne';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Clients from './components/Clients';
@@ -43,6 +44,7 @@ function App() {
 
   return (
     <div className="app">
+      <HeroSectionOne />
       <div className="navbar-hero-container">
         <Header />
         <Hero />
