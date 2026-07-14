@@ -1,4 +1,3 @@
-
 /*
 Theme Name: SINC Elementor Theme
 Theme URI: https://example.com
@@ -24,7 +23,7 @@ All styling should be done via Elementor.
 	box-sizing: border-box;
 	position: relative;
 	overflow: hidden;
-	background: linear-gradient(135deg, rgba(26,26,26,0.5) 0%, rgba(42,42,42,0.75) 100%);
+	background: linear-gradient(135deg, rgba(26, 26, 26, 0.5) 0%, rgba(42, 42, 42, 0.75) 100%);
 	border-radius: 24px;
 	border: 1px solid rgba(255, 255, 255, 0.05);
 	min-height: calc(100vh - 30px);
@@ -46,36 +45,37 @@ All styling should be done via Elementor.
 	z-index: 0;
 }
 
-.navbar-hero-container > * {
+.navbar-hero-container>* {
 	position: relative;
 	z-index: 1;
 }
 
 /* Lenis Smooth Scroll Styles */
 html {
-  scroll-behavior: auto !important;
+	scroll-behavior: auto !important;
 }
 
 html.lenis,
 html.lenis body {
-  height: auto;
+	height: auto;
 }
 
 .lenis.lenis-smooth {
-  scroll-behavior: auto !important;
+	scroll-behavior: auto !important;
 }
 
 .lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
+	overscroll-behavior: contain;
 }
 
 .lenis.lenis-stopped {
-  overflow: hidden;
+	overflow: hidden;
 }
 
 .lenis.lenis-scrolling iframe {
-  pointer-events: none;
+	pointer-events: none;
 }
+
 body {
 	background-color: #0d0d0d;
 	color: #ffffff;
@@ -125,7 +125,7 @@ h6,
 	pointer-events: none;
 }
 
-.custom-site-header > * {
+.custom-site-header>* {
 	position: relative;
 	z-index: 1;
 }
@@ -590,6 +590,7 @@ h6,
 	from {
 		transform: translateX(0);
 	}
+
 	to {
 		transform: translateX(-50%);
 	}
@@ -1526,7 +1527,7 @@ h6,
 }
 
 .skeleton-avatar {
-	background: linear-gradient(90deg, rgba(255,255,255,0.08), rgba(255,255,255,0.16), rgba(255,255,255,0.08));
+	background: linear-gradient(90deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.08));
 	background-size: 200% 100%;
 	animation: testimonial-shimmer 1.2s infinite linear;
 }
@@ -1534,7 +1535,7 @@ h6,
 .skeleton-line {
 	height: 14px;
 	border-radius: 999px;
-	background: linear-gradient(90deg, rgba(255,255,255,0.08), rgba(255,255,255,0.16), rgba(255,255,255,0.08));
+	background: linear-gradient(90deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.08));
 	background-size: 200% 100%;
 	animation: testimonial-shimmer 1.2s infinite linear;
 }
@@ -1559,8 +1560,13 @@ h6,
 }
 
 @keyframes testimonial-shimmer {
-	0% { background-position: 200% 0; }
-	100% { background-position: -200% 0; }
+	0% {
+		background-position: 200% 0;
+	}
+
+	100% {
+		background-position: -200% 0;
+	}
 }
 
 .testimonial-stars {
@@ -2202,28 +2208,29 @@ h6,
 
 /* Ensure all interactive elements have minimum 44x44 touch area */
 @media (max-width: 768px) {
-  button,
-  a {
-    min-height: 44px;
-    min-width: 44px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
 
-  /* Special case for inline text links that aren't buttons */
-  a:not(.btn-primary):not(.icon-btn):not(.mobile-nav-link):not(.service-link):not(.footer-menu a) {
-    min-height: auto;
-    min-width: auto;
-    display: inline;
-  }
+	button,
+	a {
+		min-height: 44px;
+		min-width: 44px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	/* Special case for inline text links that aren't buttons */
+	a:not(.btn-primary):not(.icon-btn):not(.mobile-nav-link):not(.service-link):not(.footer-menu a) {
+		min-height: auto;
+		min-width: auto;
+		display: inline;
+	}
 }
 
 /* Make sure images are never cropped or stretched */
 img {
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
+	max-width: 100%;
+	height: auto;
+	object-fit: contain;
 }
 
 /* ========================================
@@ -2375,7 +2382,8 @@ img {
 	}
 
 	.main-nav {
-		display: none; /* Hide main nav on small screens, menu button present */
+		display: none;
+		/* Hide main nav on small screens, menu button present */
 	}
 
 	.logo-text {
@@ -2815,6 +2823,7 @@ img {
 
 /* Mobile First - Header Styles */
 @media (max-width: 768px) {
+
 	/* Hide top bar on mobile for more space */
 	.top-bar {
 		display: none;
@@ -2958,6 +2967,7 @@ img {
 
 /* Mobile First - Other Sections */
 @media (max-width: 768px) {
+
 	/* Clients Section */
 	.clients-section-outer {
 		padding: 35px 0 45px 0 !important;
@@ -3221,6 +3231,7 @@ img {
 
 /* Touch-friendly improvements */
 @media (max-width: 768px) {
+
 	button,
 	a {
 		tap-highlight-color: transparent;
@@ -3232,7 +3243,8 @@ img {
 	}
 
 	/* Prevent horizontal scrolling */
-	html, body {
+	html,
+	body {
 		overflow-x: hidden;
 		width: 100%;
 	}
@@ -3256,6 +3268,7 @@ img {
 
 /* Desktop - Hide mobile menu elements */
 @media (min-width: 1025px) {
+
 	.mobile-nav-menu,
 	.mobile-nav-overlay {
 		display: none !important;
@@ -3265,21 +3278,8 @@ img {
 		display: none !important;
 	}
 }
-
-/* Custom Section Headings Weight */
-h2.why-heading,
-h2.tech-title,
-h2.team-title,
-h2.services-heading,
-h2.projects-title,
-h2.about-heading {
-	font-weight: 500 !important;
-}
-
 /* Specific Why Heading Width */
 h2.why-heading {
 	width: 650px;
 	max-width: 100%;
 }
-
-

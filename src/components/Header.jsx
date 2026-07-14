@@ -76,17 +76,22 @@ const Header = () => {
             </motion.div>
             <nav className="main-nav">
               <ul className="nav-menu">
-                {['Home', 'Pages', 'Services'].map((item, index) => (
+                {[
+                  { name: 'Home', href: '#' },
+                  { name: 'Home 2', href: 'https://sinc-2.vercel.app/' },
+                  { name: 'Pages', href: '#' },
+                  { name: 'Services', href: '#' }
+                ].map((item, index) => (
                   <motion.li 
-                    key={item}
-                    className={item === 'Home' ? 'active' : ''}
+                    key={item.name}
+                    className={item.name === 'Home' ? 'active' : ''}
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4 + index * 0.1 }}
                     whileHover={{ scale: 1.1 }}
                   >
-                    <a href="#">
-                      {item}
+                    <a href={item.href}>
+                      {item.name}
                       <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <polyline points="6 9 12 15 18 9" />
                       </svg>
@@ -178,16 +183,24 @@ const Header = () => {
         </div>
         <nav className="mobile-nav-content">
           <ul className="mobile-nav-list">
-            {['Home', 'Pages', 'Services', 'About', 'Projects', 'Contact'].map((item, index) => (
+            {[
+              { name: 'Home', href: '#' },
+              { name: 'Home 2', href: 'https://sinc-2.vercel.app/' },
+              { name: 'Pages', href: '#' },
+              { name: 'Services', href: '#' },
+              { name: 'About', href: '#' },
+              { name: 'Projects', href: '#' },
+              { name: 'Contact', href: '#' }
+            ].map((item, index) => (
               <motion.li 
-                key={item}
-                className={`mobile-nav-item ${item === 'Home' ? 'active' : ''}`}
+                key={item.name}
+                className={`mobile-nav-item ${item.name === 'Home' ? 'active' : ''}`}
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.1 + index * 0.1 }}
                 whileHover={{ x: 10 }}
               >
-                <a href="#" className="mobile-nav-link">{item}</a>
+                <a href={item.href} className="mobile-nav-link">{item.name}</a>
               </motion.li>
             ))}
           </ul>

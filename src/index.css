@@ -8,37 +8,8 @@
   box-sizing: border-box;
 }
 
-html, body, #root {
+html,
+body,
+#root {
   width: 100%;
-  background-color: #050505;
-}
-
-/* Custom CSS Noise Keyframe Shift */
-@keyframes shifting-noise {
-  0% { transform: translate(0, 0); }
-  10% { transform: translate(-1%, -1%); }
-  20% { transform: translate(-2%, 1%); }
-  30% { transform: translate(1%, -2%); }
-  40% { transform: translate(-1%, 3%); }
-  50% { transform: translate(-2%, 1%); }
-  60% { transform: translate(1%, 2%); }
-  70% { transform: translate(3%, -2%); }
-  80% { transform: translate(-1%, 1%); }
-  90% { transform: translate(2%, -1%); }
-  100% { transform: translate(1%, 2%); }
-}
-
-/* Hide default scrollbars for premium minimalist feel, still scrollable */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: #050505;
-}
-::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.2);
 }
