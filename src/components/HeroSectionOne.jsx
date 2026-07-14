@@ -45,8 +45,13 @@ const HeroSectionOne = () => {
             className="absolute inset-0 w-full h-full object-cover opacity-60"
             src="/assets/HERO SECTION VIDEO_processed.mp4"
           />
-          {/* Subtle bottom-to-top dark overlay gradient masking 40-70% */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/45 to-transparent z-[1]" />
+          {/* Subtle bottom-to-top dark overlay gradient (40% black at bottom, fading to transparent) */}
+          <div 
+            className="absolute inset-0 z-[1] pointer-events-none" 
+            style={{
+              background: 'linear-gradient(to top, rgba(5, 5, 5, 0.4) 0%, rgba(5, 5, 5, 0.1) 40%, rgba(5, 5, 5, 0) 100%)'
+            }}
+          />
         </div>
 
         {/* Layer 2: Ambient Light Glows (Static) */}
