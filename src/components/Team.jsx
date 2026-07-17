@@ -35,11 +35,6 @@ const Team = () => {
       name: '[Name]',
       role: 'Communication Systems Lead (SATCOM / SDR)',
       img: placeholderImage
-    },
-    {
-      name: '[Name]',
-      role: 'Maritime Data Analytics Lead',
-      img: placeholderImage
     }
   ];
 

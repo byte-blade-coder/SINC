@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { motion } from 'framer-motion';
 import AnimatedIcon from './AnimatedIcon';
 
@@ -8,14 +9,14 @@ const Header = () => {
 
   return (
     <>
-      <motion.header 
+      <motion.header
         className="custom-site-header"
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
       >
         <div className="header-container">
-          <motion.div 
+          <motion.div
             className="top-bar"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -28,8 +29,8 @@ const Header = () => {
                 </svg>
               </AnimatedIcon>
               Fast & Reliable IT Solution Services.
-              <motion.a 
-                href="#" 
+              <motion.a
+                href="#"
                 className="join-now"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -62,13 +63,13 @@ const Header = () => {
               </span>
             </div>
           </motion.div>
-          <motion.div 
+          <motion.div
             className="header-box"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.6 }}
           >
-            <motion.div 
+            <motion.div
               className="logo"
               whileHover={{ scale: 1.05 }}
             >
@@ -82,7 +83,7 @@ const Header = () => {
                   { name: 'Pages', href: '#' },
                   { name: 'Services', href: '#' }
                 ].map((item, index) => (
-                  <motion.li 
+                  <motion.li
                     key={item.name}
                     className={item.name === 'Home' ? 'active' : ''}
                     initial={{ opacity: 0, y: -10 }}
@@ -101,7 +102,7 @@ const Header = () => {
               </ul>
             </nav>
             <div className="header-actions">
-              <motion.button 
+              <motion.button
                 className="icon-btn search-btn"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
@@ -111,8 +112,8 @@ const Header = () => {
                   <line x1="21" y1="21" x2="16.65" y2="16.65" />
                 </svg>
               </motion.button>
-              <motion.a 
-                href="#" 
+              <motion.a
+                href="#"
                 className="btn-primary"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -125,7 +126,7 @@ const Header = () => {
                   </svg>
                 </span>
               </motion.a>
-              <motion.button 
+              <motion.button
                 className="icon-btn menu-btn mobile-menu-toggle"
                 onClick={() => setMenuOpen(!menuOpen)}
                 whileHover={{ scale: 1.1 }}
@@ -149,27 +150,30 @@ const Header = () => {
         </div>
       </motion.header>
 
-      {/* Mobile Navigation Overlay */}
-      <motion.div 
-        className={`mobile-nav-overlay ${menuOpen ? 'active' : ''}`} 
-        onClick={() => setMenuOpen(false)}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: menuOpen ? 1 : 0 }}
-        transition={{ duration: 0.3 }}
-      />
-      
-      {/* Mobile Navigation Menu */}
-      <motion.div 
-        className="mobile-nav-menu"
-        initial={{ x: '100%' }}
-        animate={{ x: menuOpen ? 0 : '100%' }}
+      {createPortal(
+        <>
+          {/* Mobile Navigation Overlay */}
+          <motion.div
+            className={`mobile-nav-overlay ${menuOpen ? 'active' : ''}`}
+            onClick={() => setMenuOpen(false)}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: menuOpen ? 1 : 0 }}
+            transition={{ duration: 0.3 }}
+          />
+
+          {/* Mobile Navigation Menu */}
+          <motion.div
+            className="mobile-nav-menu"
+            style={{ pointerEvents: menuOpen ? 'auto' : 'none' }}
+            initial={{ x: '100%' }}
+            animate={{ x: menuOpen ? '0%' : '100%' }}
         transition={{ type: 'spring', damping: 25, stiffness: 200 }}
       >
         <div className="mobile-nav-header">
           <div className="mobile-nav-logo">
             <img src="logo.png" alt="SINC Logo" style={{ maxHeight: '50px' }} />
           </div>
-          <motion.button 
+          <motion.button
             className="mobile-nav-close"
             onClick={() => setMenuOpen(false)}
             whileHover={{ scale: 1.1, rotate: 90 }}
@@ -192,7 +196,7 @@ const Header = () => {
               { name: 'Projects', href: '#' },
               { name: 'Contact', href: '#' }
             ].map((item, index) => (
-              <motion.li 
+              <motion.li
                 key={item.name}
                 className={`mobile-nav-item ${item.name === 'Home' ? 'active' : ''}`}
                 initial={{ opacity: 0, x: 50 }}
@@ -204,8 +208,8 @@ const Header = () => {
               </motion.li>
             ))}
           </ul>
-          <motion.a 
-            href="#" 
+          <motion.a
+            href="#"
             className="mobile-nav-cta"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -214,7 +218,10 @@ const Header = () => {
           </motion.a>
         </nav>
       </motion.div>
-    </>
+    </>,
+    document.body
+  )}
+</>
   );
 };
 

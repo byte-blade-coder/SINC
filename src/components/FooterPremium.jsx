@@ -18,7 +18,7 @@ const Footer = () => {
   const accentText = "text-[#0D8FD6]";
 
   return (
-    <footer className="relative bg-[#050505] pt-40 pb-8 px-6 sm:px-12 font-sans mt-20 rounded-3xl">
+    <footer className="relative bg-[#050505] pt-40 pb-8 px-6 sm:px-12 font-sans mt-32 rounded-3xl">
       
       {/* TOP LAYER: FLOATING CARD */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-6xl z-10">

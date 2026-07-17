@@ -133,12 +133,13 @@ const Hero = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut', delay: 0.3 }}
         >
-          <motion.img
-            src="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-            alt="Business Woman"
+          <video
             className="main-hero-img"
-            whileHover={{ scale: 1.02 }}
-            transition={{ duration: 0.3 }}
+            src="/assets/Hero-banner.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
           />
           <motion.div
             className="trusted-badge"
